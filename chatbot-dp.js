@@ -41,26 +41,26 @@ $(function () {
 
     })
 
-    /*function generate_message(msg, type) {
-    INDEX++;
-    var str = "";
-    str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
-    str += "          <span class=\"msg-avatar\">";
-    str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-    str += "          <\/span>";
-    str += "          <div class=\"cm-msg-text\">";
-    str += msg;
-    str += "          <\/div>";
-    str += "        <\/div>";
-    $(".chat-logs").append(str);
-    $("#cm-msg-" + INDEX).hide().fadeIn(300);
-    if (type == 'self') {
-        $("#chat-input").val('');
+    function generate_message(msg, type) {
+        INDEX++;
+        var str = "";
+        str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
+        str += "          <span class=\"msg-avatar\">";
+        str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+        str += "          <\/span>";
+        str += "          <div class=\"cm-msg-text\">";
+        str += msg;
+        str += "          <\/div>";
+        str += "        <\/div>";
+        $(".chat-logs").append(str);
+        $("#cm-msg-" + INDEX).hide().fadeIn(300);
+        if (type == 'self') {
+            $("#chat-input").val('');
+        }
+        $(".chat-logs").stop().animate({
+            scrollTop: $(".chat-logs")[0].scrollHeight
+        }, 1000);
     }
-    $(".chat-logs").stop().animate({
-        scrollTop: $(".chat-logs")[0].scrollHeight
-    }, 1000);
-}*/
 
     function generate_button_message(msg, buttons) {
         /* Buttons should be object array 
@@ -108,14 +108,23 @@ $(function () {
         generate_message(name, 'self');
     })
 
+
+    /*toggle animations*/
     $("#chat-circle").click(function () {
-        $("#chat-circle").toggle('scale');
-        $(".chat-box").toggle('scale');
+        $("#chat-circle").hide('scale');
+        $(".chat-box").show('scale');
+        $(".chat-box-welcome__header").show('scale');
     })
 
     $(".chat-box-toggle").click(function () {
-        $("#chat-circle").toggle('scale');
-        $(".chat-box").toggle('scale');
+        $("#chat-circle").show('scale');
+        $(".chat-box").hide('scale');
+        $(".chat-box-welcome__header").hide('scale');
+        $("#chat-box__wraper").hide('scale');
+    })
+    $(".chat-input__text").click(function () {
+        $(".chat-box-welcome__header").hide();
+        $("#chat-box__wraper").show();
     })
 
 })

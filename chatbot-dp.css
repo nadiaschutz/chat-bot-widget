@@ -74,7 +74,7 @@ body {
     position: fixed;
     bottom: 50px;
     /*right: 50px;*/
-    right: 800px;
+    right: 50px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -135,6 +135,7 @@ body {
     height: 420px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    display: none;
 }
 
 .chat-box__header-text {
@@ -178,14 +179,18 @@ body {
 
 /*chat-box after welcome was togled*/
 
+#chat-box__wraper {
+    display: none;
+}
+
 .chat-box {
     /*add display none*/
-    /*display: none;*/
+    display: none;
     /*background: #efefef;*/
     background: #f8f8f8;
     position: fixed;
     /* right: 30px;*/
-    right: 410px;
+    right: 30px;
     bottom: 50px;
     width: 350px;
     max-width: 85vw;
