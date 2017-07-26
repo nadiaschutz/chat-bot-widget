@@ -58,7 +58,7 @@ body {
 #chat-circle,
 .chat-box-welcome__header,
 .chat-box-header,
-.chat-msg.user>.msg-avatar {
+.chat-msg.bot>.msg-avatar {
     /*red*/
     background-image: linear-gradient( to top right, rgba(246, 72, 72, 1), rgba(250, 65, 95, 1));
     /*pink-blue*/
@@ -305,7 +305,7 @@ body {
     }
 }
 
-.chat-msg.user>.msg-avatar {
+.chat-msg.bot>.msg-avatar {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -314,7 +314,7 @@ body {
     padding: 10px;
 }
 
-.chat-msg.user>.msg-avatar .material-icons {
+.chat-msg.bot>.msg-avatar .material-icons {
     color: #fff;
     font-size: 25px;
 }
